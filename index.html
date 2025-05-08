@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SCREAM TAP BOT</title>
+    <link rel="stylesheet" href="scream_tap_bot/frontend/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>SCREAM</h1>
+        </header>
+
+        <nav>
+            <button id="statsButton">📊 Статистика</button>
+            <button id="topPlayersButton">🏆 Топ игроков</button>
+            <button id="bonusesButton">🎁 Бонусы</button>
+            <button id="settingsButton">⚙️ Настройки</button>
+        </nav>
+
+        <main>
+            <div class="game-area" id="gameArea">
+                <div class="stats">
+                    <p>Баланс: <span id="balance">0</span> SCREAM</p>
+                    <p>Уровень: <span id="level">1</span></p>
+                    <p>Клики: <span id="clicks">0</span></p>
+                    <p>Комбо: <span id="comboCount">0</span></p>
+                </div>
+
+                <div class="coin-container">
+                    <img id="coin" src="coin.png" alt="SCREAM Coin">
+                    <div class="click-effect"></div>
+                </div>
+                <div class="boost-timer" id="boostTimer">Буст: Нет</div>
+                <progress id="levelProgress" value="0" max="100"></progress>
+            </div>
+
+            <div class="stats-area" id="statsArea" style="display: none;">
+                <h2>Статистика</h2>
+                <p>Баланс: <span id="statsBalance">0</span> SCREAM</p>
+                <p>Уровень: <span id="statsLevel">1</span></p>
+                <p>NFT: <span id="nft">Нет</span></p>
+                <button id="backToGameFromStats">Назад</button>
+            </div>
+
+             <div class="top-players-area" id="topPlayersArea" style="display: none;">
+                <h2>Топ игроков</h2>
+                <ol id="topPlayersList"></ol>
+                <button id="backToGameFromTopPlayers">Назад</button>
+            </div>
+
+            <div class="bonuses-area" id="bonusesArea" style="display: none;">
+                <h2>Бонусы</h2>
+                <button id="dailyRewardButton">Получить ежедневную награду</button>
+                <p id="referralLink">Реферальная ссылка: (сгенерируется)</p>
+                <button id="backToGameFromBonuses">Назад</button>
+            </div>
+
+            <div class="settings-area" id="settingsArea" style="display: none;">
+                <h2>Настройки</h2>
+                <label for="nickname">Никнейм:</label>
+                <input type="text" id="nickname" placeholder="Ваш никнейм">
+                <label for="language">Язык:</label>
+                <select id="language">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                </select>
+                <button id="saveSettingsButton">Сохранить</button>
+                <button id="backToGameFromSettings">Назад</button>
+            </div>
+
+            <div class="withdraw-area" id="withdrawArea" style="display: none;">
+                 <h2>Вывод коинов</h2>
+                <p>Вывод доступен раз в неделю.</p>
+                <button id="withdrawButton">Вывести SCREAM</button>
+                <button id="backToGameFromWithdraw">Назад</button>
+            </div>
+        </main>
+
+    </div>
+
+    <audio id="coinSound" src="coin_sound.mp3" preload="auto"></audio>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="scream_tap_bot/frontend/script.js"></script>
+</body>
+</html>
