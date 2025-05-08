@@ -1,0 +1,139 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures full height */
+}
+
+.container {
+    width: 100%; /* Take full width */
+    max-width: none; /* Remove max-width */
+    background-color: #212121;
+    border-radius: 0; /* No rounded corners for full-screen */
+    overflow: hidden;
+    box-shadow: none; /* No shadow */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Take full height */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px; /* Reduced padding */
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+nav button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.7em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Press Start 2P', cursive;
+}
+
+main {
+    padding: 10px; /* Reduced padding */
+    flex-grow: 1; /* Take remaining vertical space */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats {
+    margin-bottom: 10px; /* Reduced margin */
+    text-align: center;
+}
+
+.coin-container {
+    position: relative;
+    width: 120px; /* Reduced size */
+    height: 120px; /* Reduced size */
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+#coin {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+#coin:active {
+    transform: scale(0.9);
+}
+
+.click-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.coin-container:active .click-effect {
+    opacity: 1;
+    transition: opacity 0.1s ease;
+}
+
+button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 1em; /* Reduced font size */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+    background-color: #f44336;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px; /* Reduced padding */
+    font-size: 0.6em; /* Reduced font size */
+}
+
+/* Styles for other areas (stats, top players, etc.) */
+.stats-area, .top-players-area, .bonuses-area, .settings-area, .withdraw-area {
+    padding: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
